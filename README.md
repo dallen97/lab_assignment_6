@@ -1,1 +1,1 @@
-# lab 6
+# lab assignment 6
