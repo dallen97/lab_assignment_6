@@ -2,18 +2,20 @@
 
 int search(int numbers[], int low, int high, int value)
 {
+	if (low > high) {
+		return -1;
+	}
 	int midpoint = (low+high)/2;
 
 	if (numbers[midpoint] > value) {
-		search(numbers, low, midpoint, value);
+		search(numbers, low, midpoint-1, value);
 	}
 	else if (numbers[midpoint] < value) {
-		search(numbers, midpoint, high, value);
+		search(numbers, midpoint+1, high, value);
 	}
 	else if (numbers[midpoint] == value) {
-		return 1;
+		return midpoint;
 	}
-	return -1;
 }
 
 void printArray(int numbers[], int sz)
